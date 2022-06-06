@@ -1,6 +1,4 @@
 import "./VideoCard.css"
-import { useVideos } from "../../contexts/videoContext"
-import { useFetch } from "../../service/videpApi";
 export function VideoCard({videoItem}) {
   return(
     <div className="photo-card-container text-on-picture">
