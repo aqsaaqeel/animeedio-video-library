@@ -22,7 +22,7 @@ export function Hero() {
                     <a href ="./listing"><button className ="hero-button">Watch Now</button></a>
                 </div>
                 <div className="watch-button">
-                    <button className ="hero-button">Login</button>
+                <a href ="./login"><button className ="hero-button">Login</button></a>
                 </div>
             </div>                
         </div>
