@@ -47,6 +47,12 @@
     height: 48px;
     font-size: 1rem;
 }
+#password-block{
+    width: 25rem;
+    height: 3rem;
+    font-size: 2rem;
+
+}
 .login{
     display: flex;
     flex-direction: column;
