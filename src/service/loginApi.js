@@ -1,18 +1,18 @@
 import axios from "axios";
 
-const loginHandler = async(userInfo) => {
-    const apiResponse = { token : "", username : "", error : "" }
+const login = async(userDetails) => {
+    const apiResponse = { token : "", username : "", error : "" };
     try{
         let response;
-        response = await axios.post("/api/auth/login", userInfo);
+        response = await axios.post("/api/auth/login", userDetails);
+
         if(response.status === 200){
             apiResponse.token = response.data.encodedToken;
-            apiResponse.username = `${response.data.firstName} ${response.data.lastName}`;
+            apiResponse.username = `${response.data.foundUser.firstName} ${response.data.foundUser.lastName}`;
         }
     } catch (err){
-        apiResponse.password = err.response.data.errors[0];
-        console.log(apiResponse.password);
+        console.log(err);
     }
     return apiResponse;
 }
-export { loginHandler }
+export { login }

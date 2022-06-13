@@ -1,8 +1,8 @@
 import { useContext, createContext, useReducer } from "react";
 
-const AuthContext = createContext();
+const authContext = createContext();
 
-const useAuth = () => useContext(AuthContext);
+const useAuth = () => useContext(authContext);
 
 const authReducer = (state, action) => {
     switch(action.type){
@@ -18,8 +18,12 @@ const authReducer = (state, action) => {
                 encodedToken : action.token,
                 isLoggedIn : true,
                 user : action.user,
-                error: false
             }
+            case "SIGNUP" :
+                return{
+                    ...state,
+                    loading: false,
+                }
         default :
         return { ...state };
     }
@@ -30,15 +34,14 @@ const initialAuthState = {
     encodedToken : localStorage.getItem("encodedToken") ? localStorage.getItem("encodedToken") : "",
     isLoggedIn : localStorage.getItem("encodedToken") ? true : false,
     user : "",
-    error: false
 }
 
 const AuthProvider = ({children}) => {
-    const [authState, authDispatch] = useReducer({authReducer, initialAuthState})
+    const [authState, authDispatch] = useReducer(authReducer, initialAuthState);
     return (
-        <AuthContext.Provider value = {{authState, authDispatch}}>
+        <authContext.Provider value = {{authState, authDispatch}}>
             {children}
-        </AuthContext.Provider>
+        </authContext.Provider>
     )
 }
 

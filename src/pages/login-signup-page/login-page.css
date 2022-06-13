@@ -47,7 +47,7 @@
     height: 48px;
     font-size: 1rem;
 }
-#password-block{
+.password-block{
     width: 25rem;
     height: 3rem;
     font-size: 2rem;
@@ -96,4 +96,12 @@
     margin: 2rem;
     text-align: center;
     text-decoration: none;
+}
+.button.secondary{
+    background-color: var(--secondary-color);
+    color: var(--primary-color)
+}
+.links{
+    text-decoration: none;
+    color: var(--secondary-color);
 }

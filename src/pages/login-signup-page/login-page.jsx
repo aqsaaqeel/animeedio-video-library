@@ -2,11 +2,13 @@ import "./login-page.css";
 import { useState } from "react";
 import { Link, useNavigate, useLocation} from "react-router-dom"
 import { useAuth } from "../../contexts/authContext";
-import { loginHandler } from "../../service/loginApi";
+import { login } from "../../service/loginApi";
+
 export default function LoginPage() {
   const navigate = useNavigate();
   const location = useLocation();
-  const { authState, authDispatch} = useAuth();
+  const { authDispatch} = useAuth();
+  // const { loading } = authState;
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -18,9 +20,26 @@ export default function LoginPage() {
   const userLogin = async (e) => {
     e.preventDefault();
     if(email && password){
-      authDispatch({type : "LOADING"})
+      authDispatch({type : "LOADING"});
+      const responseData = await login({
+        email: email,
+        password: password,
+      });
+      const { token, username, error} = responseData;
+      if(error){
+        console.log("Error occured");
+      } else{
+        authDispatch({
+          type: "LOGIN",
+          token: token,
+          user: username,
+        });
+        localStorage.setItem("encodedToken", token);
+        localStorage.setItem("user", username);
+        navigate(location.state?.from?.pathname || "/", {replace: true});
+      }
     }
-  }
+  };
   return (
     <div className="main-container">
       <div className="content-container">
@@ -31,34 +50,36 @@ export default function LoginPage() {
             <div className="login email">
               <label for="text">Email address</label>
               <input 
-              type="text" 
-              placeholder="adarshbalika@gmail.com"
+              type="email" 
+              placeholder="Enter your email"
+              class="password-block"
               value={email}
               onChange={(e) => setEmail(e.target.value)}/>
             </div>
             <div className="login password">
               <label for="text">Password</label>
               <input 
-              id="password-block"
+              class="password-block"
               type="password" 
               placeholder="*****"
               value ={password}
               onChange={(e) => setPassword(e.target.value)}/>
             </div>
-            <div className="login details">
-              <div className="remember-check">
-                <input type="checkbox" />
-                <label for="checkbox">Remember Me</label>
+            <div className = "login details">
+              <div className = "remember-check">
+                <input type = "checkbox" />
+                <label for = "checkbox">Remember Me</label>
               </div>
-              <a className="forgot-password" href="#">
+              <button className = "button secondary forgot-password" href="#">
                 Forgot your password?
-              </a>
+              </button>
             </div>
-            <div className="buttons">
-              <a className="button">Login</a>
-              <Link className="button" to="/signup">
+            <div className = "buttons">
+              <button className = "button" onClick = {userLogin}>Login</button>
+              <button className = "button"><Link className="links" to = "/signup">
                 Create New Account{" "}
               </Link>
+              </button>
             </div>
           </div>
         </div>
