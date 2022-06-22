@@ -7,6 +7,7 @@ const signupHandler = async(userInfo) => {
         if(response.status === 201){
             console.log("Account created")
             apiResponse.token = response.data.encodedToken;
+            console.log(apiResponse.token);
             apiResponse.username = `${response.data.createdUser.firstName} ${response.data.createdUser.lastName}`;
         }
     } catch (err){

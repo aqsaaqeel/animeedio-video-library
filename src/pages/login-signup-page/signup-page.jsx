@@ -50,9 +50,10 @@ export default function SignupPage() {
             <div class="login password">
               <label for="text">Password</label>
               <input 
-              type="text" 
+              type="password" 
               placeholder="*****" 
               value={password}
+              class = "password-block"
               onChange={(e) => {
                 setPassword(e.target.value);
               }}/>
