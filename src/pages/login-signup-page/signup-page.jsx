@@ -1,8 +1,9 @@
-import "./login-page.css";
+import  React  from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { signupHandler } from "../../service/signupApi";
 import { useAuth} from "../../contexts/authContext";
+import "./login-page.css";
 
 export default function SignupPage() {
   const navigate = useNavigate();
@@ -60,7 +61,7 @@ export default function SignupPage() {
             </div>
             <div class="login details">I accept all terms and Conditions</div>
             <div class="buttons">
-              <a class="button button-primary"onClick={userSignup}>Create New Account</a>
+              <button class="button button-primary"onClick={userSignup}>Create New Account</button>
               <br />
               <Link class="button button-secondary" to="/login">
                 Already have an account?

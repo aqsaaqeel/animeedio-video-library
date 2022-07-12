@@ -1,5 +1,6 @@
-import { createContext, useContext } from "react";
-import { useReducer } from "react";
+import  React  from 'react';
+import { createContext, useContext } from 'react';
+import { useReducer } from 'react';
 
 const VideoContext = createContext({});
 const useVideos = () => useContext(VideoContext);

@@ -1,8 +1,9 @@
-import "./login-page.css";
+import  React  from "react";
 import { useState } from "react";
 import { Link, useNavigate, useLocation} from "react-router-dom"
 import { useAuth } from "../../contexts/authContext";
 import { login } from "../../service/loginApi";
+import "./login-page.css";
 
 export default function LoginPage() {
   const navigate = useNavigate();
@@ -36,7 +37,8 @@ export default function LoginPage() {
         });
         localStorage.setItem("encodedToken", token);
         localStorage.setItem("user", username);
-        navigate(location.state?.from?.pathname || "/", {replace: true});
+        navigate(location || "/", {replace: true});
+        // .state?.from?.pathname
       }
     }
   };

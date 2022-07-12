@@ -7,8 +7,9 @@
     box-shadow: 1px 1px 15px 0 rgb(172, 170, 170);
 }
 .card-heading{
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin: 0.5rem;
+    width: 20rem;
     color: var(--secondary-color);
 }
 .card-subheading{
@@ -17,6 +18,8 @@
 }
 .card-body{
     margin: 0 0.5rem 0.5rem 0.5rem;
+    width: 20rem;
+    height: 5rem;
 }
 .card-footer{
     margin: 0.5rem;
