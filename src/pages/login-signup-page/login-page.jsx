@@ -37,8 +37,8 @@ export default function LoginPage() {
         });
         localStorage.setItem("encodedToken", token);
         localStorage.setItem("user", username);
-        navigate(location || "/", {replace: true});
-        // .state?.from?.pathname
+        navigate(location.state?.from?.pathname || "/", {replace: true});
+        
       }
     }
   };

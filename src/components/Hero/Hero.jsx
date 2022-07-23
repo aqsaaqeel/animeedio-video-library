@@ -1,5 +1,5 @@
 import  React from 'react';
-import "./anime-hero.svg"
+
 // import Lottie from "react-lottie"
 import "./Hero.css"
 // import animation from "../../lottie-hero.json"

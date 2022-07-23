@@ -5,7 +5,7 @@ const signupHandler = async(userInfo) => {
         let response;
         response = await axios.post("/api/auth/signup", userInfo);
         if(response.status === 201){
-            console.log("Account created")
+            console.log(response)
             apiResponse.token = response.data.encodedToken;
             console.log(apiResponse.token);
             apiResponse.username = `${response.data.createdUser.firstName} ${response.data.createdUser.lastName}`;

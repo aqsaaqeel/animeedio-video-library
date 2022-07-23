@@ -1,5 +1,5 @@
 import  React  from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { signupHandler } from "../../service/signupApi";
 import { useAuth} from "../../contexts/authContext";
@@ -7,6 +7,7 @@ import "./login-page.css";
 
 export default function SignupPage() {
   const navigate = useNavigate();
+  const location = useLocation();
   const {authDispatch} = useAuth();
   // const [ userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
@@ -27,7 +28,7 @@ export default function SignupPage() {
         authDispatch({
           type: "SIGNUP",
         });
-        navigate("/login", {replace: true});
+        navigate(location.state?.from?.pathname || "/", {replace: true});
       }
     }
   };
