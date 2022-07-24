@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Navbar.css"
-import MenuIcon from "@mui/icons-material/Menu";
+// import MenuIcon from "@mui/icons-material/Menu";
 import { Link } from 'react-router-dom'
 const SidebarData = [
     {
@@ -19,6 +19,12 @@ const SidebarData = [
         cName: 'nav-text'
     }
 ]
+
+// const Menu = () => {
+//     return(
+//     <button>Menu</button>)
+// }
+
 export function Navbar(){
     const [sidebar, setSidebar] = useState(false);
     const showSidebar = () =>{
@@ -28,7 +34,7 @@ export function Navbar(){
         <div className="nav-container">
             <div className="menu-items">
                 <ul className="menu-items">
-                    <Link to = "#"><li className="list-item-left"><MenuIcon onClick ={showSidebar} /></li></Link>
+                    <Link to = "#"><li className="list-item-left"><Link to ="#" onClick ={showSidebar}>Menu</Link></li></Link>
                     <nav className = { sidebar ? "nav-menu active" : "nav-menu"}>
                         <ul className="nav-menu-items">
                             <li className = "navbar-toggle">
