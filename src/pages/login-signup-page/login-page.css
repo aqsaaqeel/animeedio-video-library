@@ -1,0 +1,107 @@
+.content-container{
+    width: 100%;
+    /* height: 80vh; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login-container{
+    background-color: white;
+    display: flex;
+    max-width: 80rem;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    /* margin-top: 5rem; */
+    /* padding: 7rem 10rem; */
+    box-shadow: 0 0.01rem 0.01rem 0.01rem black;
+}
+.login-elements{
+    display: flex;
+    max-width: 90rem;
+    width: 50rem;
+    height: 50rem;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    /* margin-top: 10rem; */
+    padding: 7rem 10rem;
+}
+.login-hero{
+    font-size: 4rem;
+    padding: 1rem;
+    padding-bottom: 2rem;
+    font-weight: bolder;
+}
+.login.email,.login.password  {
+    display: flex;
+}
+.login.email label{
+    align-self: flex-start;
+}
+.login.password label{
+    align-self: flex-start;
+}
+.login input[type= "text"]{
+    width: 400px;
+    height: 48px;
+    font-size: 1rem;
+}
+.password-block{
+    width: 25rem;
+    height: 3rem;
+    font-size: 2rem;
+
+}
+.login{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    padding-left: 0;
+    padding-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: lighter;
+}
+.login.details{
+    flex-direction: row;
+    width: max-content;
+    vertical-align: middle;
+}
+.remember-check label,input{
+    display: inline-block;
+    vertical-align: middle;
+
+}
+.remember-check input{
+    transform: scale(1.5);
+}
+.forgot-password{
+    text-decoration: none;
+    padding: 2rem;
+}
+.button{
+    padding: 0.5rem 1rem;
+    background-color: var(--primary-color);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    opacity: 100%;
+    width: 12rem;
+    height: 2.5rem;
+    color: var(--secondary-color);
+    border: none;
+    font-size: 1rem;
+    display: block;
+    margin: 2rem;
+    text-align: center;
+    text-decoration: none;
+}
+.button.secondary{
+    background-color: var(--secondary-color);
+    color: var(--primary-color)
+}
+.links{
+    text-decoration: none;
+    color: var(--secondary-color);
+}

@@ -1,0 +1,38 @@
+.content-area{
+    display: flex;
+    margin : 0rem;
+}
+.lottie-hero-container{
+
+}
+.hero-heading-lottie{
+    padding : 2rem;
+    font-size: 2rem;
+}
+.hero-content-area{
+    max-height: auto;
+    text-align: center;
+}
+.hero-buttons{
+    display: flex;
+    padding: 2rem;
+    justify-content: center;
+}
+.hero-button{
+    padding: 0.5rem 1rem;
+    background-color: var(--primary-color);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    opacity: 100%;
+    width: 8rem;
+    height: 2.5rem;
+    color: var(--secondary-color);
+    border: none;
+    font-size: 1rem;
+}
+.watch-button{
+    padding: 1.5rem;
+}
+.hero-img{
+    width: 30%;
+}
