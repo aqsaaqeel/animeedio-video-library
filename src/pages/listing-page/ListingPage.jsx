@@ -1,6 +1,6 @@
 import React from 'react';
 import "./ListingPage.css"
-import { VideoCard } from "../../components/VideoCard/VideoCard.js"
+import { VideoCard } from "../../components/VideoCard/VideoCard.jsx"
 import { useEffect } from "react";
 import { useFetch } from "../../service/videpApi.js";
 import { useVideos } from "../../contexts/videoContext.jsx";

@@ -1,4 +1,5 @@
 import  React  from 'react';
+import { Link } from 'react-router-dom';
 import "./VideoCard.css"
 export function VideoCard({videoItem}) {
   return(
@@ -17,7 +18,7 @@ export function VideoCard({videoItem}) {
           <div className="card-footer">
             <div className="text-butons">
               <button className="btn wo-outline">{videoItem.creator}</button>
-              <a href={videoItem.url}><button className="btn wo-outline">Play Video</button></a>
+              <Link to="/single-video"><button className="btn wo-outline">Play Video</button></Link>
             </div>
             <div className="icons-buttons">
               <button className="btn icon">
