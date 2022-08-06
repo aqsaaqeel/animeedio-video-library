@@ -7,12 +7,13 @@ import { useVideos } from "../../contexts/videoContext.jsx";
 export const ListingPage = () => {
   const {videoInfo} = useFetch("/api/videos")
   const {currVidState, vidDispatch} = useVideos();
-  const {allVideos} = currVidState;
+  const {allVideos, singleVideo} = currVidState;
+  console.log(allVideos, singleVideo)
   useEffect(() => {
     vidDispatch({type: "SHOW_VIDEOS", payload: videoInfo});
   }, [videoInfo, vidDispatch]);
   return (
-    <div class="listing-page-container">
+    <div className="listing-page-container">
       {allVideos.map((vidItem) =><VideoCard videoItem = {vidItem} />)}
     </div>
   );

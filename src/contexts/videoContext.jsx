@@ -20,13 +20,14 @@ const VideoProvider = ({ children }) => {
 const vidReducer = (state, action) => {
     switch(action.type){
         case "SHOW_VIDEOS":
-            return { ...state, allVideos: action.payload };
-
+            return { ...state, allVideos: [ ...action.payload] };
+        case "CURRENT_VIDEO":
+            return { ...state, singleVideo: { ...action.payload} };
         default:
             return { ...state};
     }
 };
 
-const initialVidState = { allVideos : [], }
+const initialVidState = { allVideos : [], singleVideo:{} }
 
 export { VideoProvider, useVideos }
