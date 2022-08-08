@@ -65,7 +65,7 @@ export function Navbar(){
             </div>
             <div className="menu-items">
                 <ul className="menu-items">
-                    <li className="list-item"><a className="menu-link" href ="/login">Login</a></li>
+                    <li className="list-item"><Link className="menu-link" to ="/login">Login</Link></li>
                 </ul>
             </div>
         </div>

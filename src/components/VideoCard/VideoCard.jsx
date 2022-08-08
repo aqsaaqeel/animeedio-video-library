@@ -1,6 +1,9 @@
 import  React  from 'react';
+import { Link } from 'react-router-dom';
 import "./VideoCard.css"
+import { useParams } from 'react-router-dom';
 export function VideoCard({videoItem}) {
+  const {videoId} = useParams();
   return(
     <div className="photo-card-container text-on-picture">
         <div className="basic-card-container">
@@ -17,7 +20,7 @@ export function VideoCard({videoItem}) {
           <div className="card-footer">
             <div className="text-butons">
               <button className="btn wo-outline">{videoItem.creator}</button>
-              <a href={videoItem.url}><button className="btn wo-outline">Play Video</button></a>
+              <Link to={`/video/${videoItem._id}`}><button className="btn wo-outline">Play Video</button></Link>
             </div>
             <div className="icons-buttons">
               <button className="btn icon">

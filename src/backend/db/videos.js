@@ -6,7 +6,7 @@ import { v4 as uuid} from "uuid"
 
 export const videos = [
   {
-    _id: {uuid},
+    _id: "8f2QCkQIKEg",
     src : "https://i.ytimg.com/vi/8f2QCkQIKEg/default.jpg",
     title: "What are They Doing in Anime",
     description:
@@ -15,7 +15,7 @@ export const videos = [
     url: "https://www.youtube.com/watch?v=8f2QCkQIKEg",
   },
   {
-    _id: {uuid},
+    _id: "eZv8If_fUdI",
     src : "https://i.ytimg.com/vi/eZv8If_fUdI/default.jpg",
     title: "Best New Spring 2022 Anime",
     description:
@@ -24,7 +24,7 @@ export const videos = [
     url: "https://www.youtube.com/watch?v=eZv8If_fUdI",
   },
   {
-    _id: {uuid},
+    _id: "Y9P1EhndE0w",
     src : "https://i.ytimg.com/vi/Y9P1EhndE0w/default.jpg",
     title: "Top 5 Naruto Fights",
     description:
